@@ -1,4 +1,4 @@
-public class bookShelf implements Aggregate {
+public class BookShelf implements Aggregate {
     private Book[] books;
     private int last = 0;
     
@@ -13,5 +13,13 @@ public class bookShelf implements Aggregate {
     public void appendBook(Book book) {
         this.books[last] = book;
         last++;
+    }
+    
+    public int getLength() {
+        return last;
+    }
+    
+    public Iterator iterator() {
+        return new BookShelfIterator(this);
     }
 }
