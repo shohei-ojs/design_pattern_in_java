@@ -14,6 +14,6 @@ public class CharDisplay extends AbstractDisplay {
     System.out.print(ch);
   }
   public void close() {
-    System.out.print(">>");
+    System.out.println(">>");
   }
 }
