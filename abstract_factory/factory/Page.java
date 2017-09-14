@@ -19,7 +19,14 @@ public abstract class Page {
   public void output() {
     try {
       String filename = title + ".html";
-      Writer
+      Writer writer = new FileWriter(filename);
+      writer.write(this.makeHTML());
+      writer.close();
+      System.out.println(filename + "を作成しました。");
+    } catch (IOException e) {
+      e.printStackTrace();
     }
+    
   }
+  public abstract String makeHTML();
  }
